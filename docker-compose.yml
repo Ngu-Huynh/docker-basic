@@ -1,1 +1,12 @@
 version: "3.3"
+services:
+  Ubuntu:
+    image: ubuntu 18.04
+  db:
+    restart:
+      always
+    image: mysql:5.7.22
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - db-data:/var/lib/mysql
